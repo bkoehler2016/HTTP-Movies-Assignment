@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import { Button } from "reactstrap";
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -57,8 +58,10 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <button onClick={this.routeToUpdate}>Edit</button>
-        <button onClick={this.deleteHandler}>Delete</button>
+        <Button onClick={this.routeToUpdate}>Edit</Button>
+        <Button color="danger" onClick={this.deleteHandler}>
+          Delete
+        </Button>
       </div>
     );
   }

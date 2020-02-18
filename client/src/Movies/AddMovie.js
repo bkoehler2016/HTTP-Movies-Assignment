@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Button } from "reactstrap";
 import axios from "axios";
 
 const AddMovie = props => {
@@ -86,7 +86,7 @@ const AddMovie = props => {
             onChange={handleChange}
           />
         </label>
-        <button>Add Movie</button>
+        <Button>Add Movie</Button>
       </form>
     </div>
   );
