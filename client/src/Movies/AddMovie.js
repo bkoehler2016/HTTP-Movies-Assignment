@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "reactstrap";
+import { Button, Form, Label, Input, Row, Col, FormGroup } from "reactstrap";
 import axios from "axios";
 
 const AddMovie = props => {
@@ -49,45 +49,65 @@ const AddMovie = props => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:{" "}
-          <input
-            type="text"
-            value={newMovie.title}
-            name="title"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Director:{" "}
-          <input
-            type="text"
-            value={newMovie.director}
-            name="director"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Metascore:{" "}
-          <input
-            type="number"
-            value={newMovie.metascore}
-            name="metascore"
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Stars:{" "}
-          <input
-            type="text"
-            value={newMovie.stars}
-            name="stars"
-            onChange={handleChange}
-          />
-        </label>
-        <Button>Add Movie</Button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Name: </Label>
+              <Input
+                type="text"
+                value={newMovie.title}
+                name="title"
+                onChange={handleChange}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Director:{""} </Label>
+              <Input
+                type="text"
+                value={newMovie.director}
+                name="director"
+                onChange={handleChange}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={2}>
+            <FormGroup>
+              <Label>Metascore:{""} </Label>
+              <Input
+                type="number"
+                value={newMovie.metascore}
+                name="metascore"
+                onChange={handleChange}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Stars:{""} </Label>
+              <Input
+                type="text"
+                value={newMovie.stars}
+                name="stars"
+                onChange={handleChange}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Button color="primary">Add Movie</Button>
+      </Form>
     </div>
   );
 };

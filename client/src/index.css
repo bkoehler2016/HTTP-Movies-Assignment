@@ -5,6 +5,10 @@ body {
   background-color: #66AA33;
 }
 
+.btn {
+  margin-right: 20px;
+}
+
 .home-button a {
   margin: 10px;
 }

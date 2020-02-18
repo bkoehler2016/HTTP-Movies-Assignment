@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 const initialItem = {
   id: "",
   title: "",
@@ -41,49 +41,68 @@ const UpdateMovie = props => {
   return (
     <div>
       <h1>Update Item</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:{" "}
-          <input
-            type="text"
-            name="title"
-            onChange={changeHandler}
-            value={movieInfo.title}
-          />
-          <br></br>
-        </label>
-        <label>
-          Director:{" "}
-          <input
-            type="text"
-            name="director"
-            onChange={changeHandler}
-            value={movieInfo.director}
-          />
-        </label>
-        <br></br>
-        <label>
-          MetaScore:{" "}
-          <input
-            type="text"
-            name="metascore"
-            onChange={changeHandler}
-            value={movieInfo.metascore}
-          />
-        </label>
-        <br></br>
-        <label>
-          stars:{" "}
-          <input
-            type="text"
-            name="stars"
-            onChange={changeHandler}
-            value={movieInfo.stars}
-          />
-        </label>
-        <br></br>
-        <button type="submit">Submit Changes</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Title:{""} </Label>
+              <Input
+                type="text"
+                name="title"
+                onChange={changeHandler}
+                value={movieInfo.title}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Director:{""} </Label>
+              <Input
+                type="text"
+                name="director"
+                onChange={changeHandler}
+                value={movieInfo.director}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={2}>
+            <FormGroup>
+              <Label>Metascore:{""} </Label>
+              <Input
+                type="text"
+                name="metascore"
+                onChange={changeHandler}
+                value={movieInfo.metascore}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Row form>
+          <Col md={6}>
+            <FormGroup>
+              <Label>Stars:{""} </Label>
+
+              <Input
+                type="text"
+                name="stars"
+                onChange={changeHandler}
+                value={movieInfo.stars}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
+        <Button color="primary" type="submit">
+          Submit Changes
+        </Button>
+      </Form>
     </div>
   );
 };
