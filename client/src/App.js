@@ -44,8 +44,8 @@ const App = props => {
   };
 
   const deleteItem = id => {
-    axios
-      .delete(`http://localhost:5000/api/movies/${id}`)
+    const myPromise = axios.delete(`http://localhost:5000/api/movies/${id}`);
+    myPromise
       .then(res => {
         setItems(res.data);
         props.history.push("/");

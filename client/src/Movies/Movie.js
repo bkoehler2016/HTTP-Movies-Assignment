@@ -17,17 +17,21 @@ export default class Movie extends React.Component {
     this.fetchMovie(this.props.match.params.id);
   }
 
-  componentWillReceiveProps(newProps) {
+  UNSAFE_componentWillReceiveProps(newProps) {
     if (this.props.match.params.id !== newProps.match.params.id) {
       this.fetchMovie(newProps.match.params.id);
     }
   }
 
   fetchMovie = id => {
-    axios
-      .get(`http://localhost:5000/api/movies/${id}`)
-      .then(res => this.setState({ movie: res.data }))
-      .catch(err => console.log(err.response));
+    const myPromise = axios.get(`http://localhost:5000/api/movies/${id}`);
+    myPromise
+      .then(response => {
+        this.setState({ movie: response.data });
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   saveMovie = () => {
