@@ -51,7 +51,7 @@ const AddMovie = props => {
     <div>
       <Form onSubmit={handleSubmit}>
         <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Name: </Label>
               <Input
@@ -62,10 +62,8 @@ const AddMovie = props => {
               />
             </FormGroup>
           </Col>
-        </Row>
 
-        <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Director:{""} </Label>
               <Input
@@ -90,10 +88,8 @@ const AddMovie = props => {
               />
             </FormGroup>
           </Col>
-        </Row>
 
-        <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Stars:{""} </Label>
               <Input

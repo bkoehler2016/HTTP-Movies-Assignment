@@ -43,7 +43,7 @@ const UpdateMovie = props => {
       <h1>Update Item</h1>
       <Form onSubmit={handleSubmit}>
         <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Title:{""} </Label>
               <Input
@@ -54,10 +54,8 @@ const UpdateMovie = props => {
               />
             </FormGroup>
           </Col>
-        </Row>
 
-        <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Director:{""} </Label>
               <Input
@@ -82,10 +80,8 @@ const UpdateMovie = props => {
               />
             </FormGroup>
           </Col>
-        </Row>
 
-        <Row form>
-          <Col md={6}>
+          <Col md={4}>
             <FormGroup>
               <Label>Stars:{""} </Label>
 
