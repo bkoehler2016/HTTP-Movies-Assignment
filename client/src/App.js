@@ -50,7 +50,9 @@ const App = props => {
         setItems(res.data);
         props.history.push("/");
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   return (
