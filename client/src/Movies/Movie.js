@@ -9,6 +9,7 @@ export default class Movie extends React.Component {
       movie: null
     };
   }
+
   item = this.props.items.find(
     thing => `${thing.id}` === this.props.match.params.id
   );
@@ -46,8 +47,8 @@ export default class Movie extends React.Component {
   };
 
   deleteHandler = e => {
-    // e.persist()
-    // e.preventDefault();
+    e.persist();
+    e.preventDefault();
     this.props.deleteItem(this.state.movie.id);
   };
 

@@ -42,7 +42,9 @@ const App = props => {
       })
       .catch(err => console.log(err));
   };
-
+  function reload() {
+    window.location.reload();
+  }
   const deleteItem = id => {
     axios
       .delete(`http://localhost:5000/api/movies/${id}`)
@@ -50,6 +52,7 @@ const App = props => {
       .then(res => {
         setItems(res.data);
         props.history.push("/");
+        reload();
       })
       .catch(err => {
         console.log(err);
