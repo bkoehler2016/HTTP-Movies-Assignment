@@ -16,7 +16,7 @@ const App = props => {
     axios
       .get("http://localhost:5000/api/movies")
       .then(res => {
-        console.log("delete", res.data);
+        console.log("update list", res.data);
         setItems(res.data);
       })
       .catch(error => console.log(error));
